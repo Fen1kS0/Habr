@@ -1,0 +1,496 @@
+{
+	"info": {
+		"_postman_id": "680e58cb-8039-404b-a799-169c50f6f26a",
+		"name": "Habr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14747493"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Get all posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/posts",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all public posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/posts/public",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								"public"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all public posts by author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/posts/public/author/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								"public",
+								"author",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all draft posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/posts/draft",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								"draft"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all draft posts by author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/posts/draft/author/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								"draft",
+								"author",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get post by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/posts/3",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Test title\",\r\n  \"text\": \"Test text\",\r\n  \"authorId\": 1,\r\n  \"isPublished\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/posts",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Update post title\",\r\n  \"text\": \"Update post text\",\r\n  \"authorId\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/posts/3",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/posts/3?authorId=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								"3"
+							],
+							"query": [
+								{
+									"key": "authorId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Move post to draft",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/posts/3/moveToDraft?authorId=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								"3",
+								"moveToDraft"
+							],
+							"query": [
+								{
+									"key": "authorId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/posts/3/publish?authorId=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								"3",
+								"publish"
+							],
+							"query": [
+								{
+									"key": "authorId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Get all comments in post by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/posts/1/comments?postId=1&authorId=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								"1",
+								"comments"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "1"
+								},
+								{
+									"key": "authorId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get comment by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/posts/1/comments/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								"1",
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"authorId\": 2,\r\n  \"text\": \"test comment\",\r\n  \"parentCommentId\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/posts/1/comments",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"posts",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"text\": \"update test comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/comments/8?authorId=2",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"comments",
+								"8"
+							],
+							"query": [
+								{
+									"key": "authorId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/comments/8?authorId=2",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"comments",
+								"8"
+							],
+							"query": [
+								{
+									"key": "authorId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/users/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/users/login",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Test\",\r\n  \"email\": \"test@ya.ru\",\r\n  \"password\": \"654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/users/register",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiUrl",
+			"value": "https://localhost:7134/api",
+			"type": "string"
+		}
+	]
+}

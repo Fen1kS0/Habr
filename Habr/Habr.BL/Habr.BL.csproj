@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Habr.Common\Habr.Common.csproj" />
+      <ProjectReference Include="..\Habr.DataAccess\Habr.DataAccess.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+      <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.1" />
+      <PackageReference Include="Hangfire.Core" Version="1.7.30" />
+    </ItemGroup>
+
+</Project>
